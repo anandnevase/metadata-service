@@ -1,0 +1,14 @@
+version: '3'
+services:
+  metadata:
+    build: .
+    ports:
+    - "9009:8080"
+    depends_on: 
+    - mongo
+  mongo:
+    image: mongo
+    ports:
+    - "27017:27017"
+    volumes:
+      - /tmp/mongodb:/data/db
